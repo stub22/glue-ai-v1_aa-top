@@ -20,6 +20,26 @@
 <p>Open source software for social robotics</p>
 <hr/>
 
+<p>
+GLUE.ai is a collection of software, designs, and specifications intended to facilitate the building of open source social robotics systems.
+<br/>In plain terms, GLUE.ai is a toolset for making robot characters, running inside both actual robot hardware, and computer simulations.
+</p>
+
+<p>
+Running such characters requires a lot of software and data.  Rather than invent all the pieces ourselves, we bring together existing 
+open source software and data standards to make life easier for everyone.   We also divide GLUE.ai itself into a number of separate
+pieces, so that our users can each choose just the pieces they need for their own applications.
+</p>
+
+<p>
+GLUE.ai allows your application to be constructed as a set of plugins operating at differing levels of information granularity:
+</p>
+<ul>
+<li>A <b>symbolic</b> plugin can process high level information available about the character's mental state and estimated surroundings.  
+At this level we shape the intentions of the character.  Usually this kind of plugin will only take action a few times each second, to fulfill its high level decisions,  although it may be thinking continuously.  It relies on input symbols published by lower level signal plugins, and produces output symbols for consumption by other components that translate the symbolic intent into physical/virtual motion, sound, and other character action.</li>
+<li>A <b>signal</b> plugin can process lower level streaming information such as camera, audio, and sensor data.  Such a plugin will generally need to run many times each second, to keep up with the streaming data.  This plugin may identify symbolic information in the stream, which it may publish for consideration by higher level symbolic plugins.</li>
+</ul>
+
 <p>All binaries and source code are provided through our subproject websites and repositories.</p>
 <p>Please start by browsing our online docs.</p>
 
