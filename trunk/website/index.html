@@ -70,6 +70,8 @@ If you are building your own character software application, you may see GLUE.ai
 <li>A <b>symbol</b> plugin can process high level information available about the character's mental state and estimated surroundings.  
 At this level we shape the intentions of the character.  Usually this kind of plugin will only take action a few times each second, to fulfill its high level decisions,  although it may be thinking continuously.  It relies on input symbols published by lower level signal plugins, and produces output symbols for consumption by other components that translate the symbolic intent into physical/virtual motion, sound, and other character action.</li>
 <li>A <b>signal</b> plugin can process lower level streaming information such as camera, audio, and sensor data.  Such a plugin will generally need to run many times each second, to keep up with the streaming data.  This plugin may identify symbolic information in the stream, which it may publish for consideration by higher level symbolic plugins.</li>
+<li>Plugins may connect to GLUE.ai components over network protocols (HTTP, AMQP), or be injected directly into our processes via OSGi or equivalents.</li>
+<li>Configuration and state data may be shared through repository whiteboards (RDF, SQL, HDF5), and/or explicit messages (Avro, JSON).</li>
 </ul>
 
 <p>To get you started, GLUE.ai contains a large number of existing feature components, demonstration programs, and test harnesses.
