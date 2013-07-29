@@ -17,12 +17,13 @@
 </HEAD>
 <BODY>
 <h2>Welcome to GLUE.ai!</h2>
-<p>Open source software for social robotics</p>
+<p><i>Open source software for social robotics</i></p>
 <hr/>
 
 <p>
 GLUE.ai is a collection of software, designs, and specifications intended to facilitate the building of open source social robotics systems.
-<br/>In plain terms, GLUE.ai is a toolset for making robot characters, running inside both actual robot hardware, and computer simulations.
+<br/>In plain terms, GLUE.ai is a toolset for making engaging robot characters, running inside both actual robot hardware, and computer simulations.
+<br/>Each character may use a broad combination of physical and verbal features, which may evolve over time in complex (and fun!) ways.
 </p>
 
 <p>
@@ -32,19 +33,41 @@ pieces, so that our users can each choose just the pieces they need for their ow
 </p>
 
 <p>
-GLUE.ai allows your application to be constructed as a set of plugins operating at differing levels of information granularity:
+If you are creating content for an existing character application based on GLUE.ai, then you will be primarily interested in our 
+authorable content formats, such as:
 </p>
 <ul>
-<li>A <b>symbolic</b> plugin can process high level information available about the character's mental state and estimated surroundings.  
+	<li><a href="http://inform7.com">Inform 7</a> and related Interactive Fiction authoring systems.</li>
+	<li><a href="http://www.w3.org/RDF/">RDF</a> and related Semantic Web, Linked Data, and Description Logic standards.  RDF data may be edited using numerous forms, including
+		<ul><li><a href="http://protege.stanford.edu">Protege</a> knowledge editor.  (See also: TopBraid)</li>
+			<li>Spreadsheets- including online Google-Docs spreadsheets, as well as local OpenOffice / Excel sheets, and other CSV-compatible editors.</li>
+			<li>Plain text forms like Turtle and SPARQL</li>
+		</ul>
+	</li>
+	<li>MIDI, WAV, MP3 and many related musical + audio data standards (used for both sensing input and performance output).</li>
+	<li>Camera data and vision processing formats.</li>
+	<li>Animation and body description formats, including mappings to robot servos and onscreen displays.</li>
+	<li>Other sensor and effector data, including input IMU and location sensing, and output lighting.</li>
+	<li>Mathematical definitions of calculations, in a form similar to Matlab, Scilab, or Octave, 
+			usually parsed by <a href="https://code.google.com/p/symja">Symja</a>.
+	</li>
+</ul>
+<p>
+If you are building your own character software application, you may see GLUE.ai as either simply a library, or as a framework for your app.
+<br/>When GLUE.ai is used as a framework, then your application is a set of plugins operating at differing levels of information granularity:
+</p>
+<ul>
+<li>A <b>symbol</b> plugin can process high level information available about the character's mental state and estimated surroundings.  
 At this level we shape the intentions of the character.  Usually this kind of plugin will only take action a few times each second, to fulfill its high level decisions,  although it may be thinking continuously.  It relies on input symbols published by lower level signal plugins, and produces output symbols for consumption by other components that translate the symbolic intent into physical/virtual motion, sound, and other character action.</li>
 <li>A <b>signal</b> plugin can process lower level streaming information such as camera, audio, and sensor data.  Such a plugin will generally need to run many times each second, to keep up with the streaming data.  This plugin may identify symbolic information in the stream, which it may publish for consideration by higher level symbolic plugins.</li>
 </ul>
 
-<p>All binaries and source code are provided through our subproject websites and repositories.</p>
-<p>Please start by browsing our online docs.</p>
+<p>To get you started, GLUE.ai contains a large number of existing feature components, demonstration programs, and test harnesses.
+<br/>All binaries and source code are provided through our subproject websites and repositories.</p>
+<p>Please learn more by browsing our online docs:</p>
 
 <ul>
-<li><a href="https://www.assembla.com/spaces/glue_ai/wiki">Glue.ai wiki</a>
+<li><a href="https://www.assembla.com/spaces/glue_ai/wiki">GLUE.ai wiki</a>
 
 	<ul>
 	<li><a href="https://www.assembla.com/spaces/glue_ai/wiki/GlueResources">Glue Resources</a> - wiki page showing exhaustive list of resources you might access</li>
