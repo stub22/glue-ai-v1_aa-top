@@ -2,7 +2,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:DC="http://purl.org/metadata/dublin_core_elements#" xml:lang="en" lang="en">
 <head>
-    <meta http-equiv="refresh" content="15"/>
     <meta name="DC.creator" content="David Decraene" />
 	<meta name="DC.publisher" content="Ontology Online" />
     <meta name="Keywords" content="OWL, Ubiquity, jQuery, jOWL, ontology, semantic web"/>
@@ -30,6 +29,27 @@
 	<script type="text/javascript" src="scripts/jOWLBrowser.js"></script>
     <script type="text/javascript">
 
+
+var reloading;
+
+function checkReloading() {
+    if (window.location.hash=="#autoreload") {
+        reloading=setTimeout("window.location.reload();", 15000);
+        document.getElementById("reloadCB").checked=true;
+    }
+}
+
+function toggleAutoRefresh(cb) {
+    if (cb.checked) {
+        window.location.replace("#autoreload");
+        reloading=setTimeout("window.location.reload();", 15000);
+    } else {
+        window.location.replace("#");
+        clearTimeout(reloading);
+    }
+}
+
+window.onload=checkReloading;
 
 	function getUrlVars() {
 		var vars = {};
@@ -270,5 +290,6 @@ window.onload = function () {
 			<p><a href="http://ontologyonline.org" style="text-decoration:none;">OntologyOnline.org</a></p>
 		</div>		
 	</div>
+    <input type="checkbox" onclick="toggleAutoRefresh(this);" id="reloadCB"> Auto Refresh
 	</body>
 </html>
