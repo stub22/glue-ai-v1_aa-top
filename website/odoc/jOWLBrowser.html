@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:DC="http://purl.org/metadata/dublin_core_elements#" xml:lang="en" lang="en">
 <head>
+    <meta http-equiv="refresh" content="5"/>
     <meta name="DC.creator" content="David Decraene" />
 	<meta name="DC.publisher" content="Ontology Online" />
     <meta name="Keywords" content="OWL, Ubiquity, jQuery, jOWL, ontology, semantic web"/>
@@ -28,11 +29,32 @@
 	<script type="text/javascript" src="scripts/jOWL_UI.js"></script>
 	<script type="text/javascript" src="scripts/jOWLBrowser.js"></script>
     <script type="text/javascript">
+
+
+	function getUrlVars() {
+		var vars = {};
+		var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*?)[#.]/gi, function(m,key,value) {
+			if(vars[key]){
+				if(vars[key] instanceof Array){
+					vars[key].push(value);
+				}else{
+					vars[key] = [vars[key], value];
+				}
+			}else{
+				vars[key] = value;
+			}
+		});
+		return vars;
+}
+	
+
 /** 
 Modify this configuration object to fine-tune the visualisation of the jOWL browser.
 */
 	var configuration = {
-		ontology : "data/wine.owl", //the ontology to load
+		//ontology : "https://www.assembla.com/code/appdapter/subversion/node/blob/trunk/src_resources/org/appdapter/democonf/owl/snazzy.owl?raw=1&rev=525", //the ontology to load
+		ontology : "data/snazzy.owl", //the ontology to load
+		//ontology : "data/wine.owl", //the ontology to load
 		owlClass       : null, //The class to show when loading
 		classOverview  : true, //show or hide the class overview list.
 		propertiesTab  : true, //show or hide the properties panel
@@ -49,8 +71,8 @@ $(document).ready(function() {
 	if(!configuration.sparqldlTab)   { $('#sparqldlPanel').remove();   $('#tab4').remove(); }
 
 	$("#tabs").tabs();
-
-	jOWL.load(configuration.ontology, initjOWL, {reason : true, locale : 'en' });
+    //var ontfile = getUrlVars()["ontfile"];
+	jOWL.loadRemote(configuration.ontology, initjOWL, {reason : true, locale : 'en' });
 });
 
 function initjOWL(){
@@ -87,6 +109,18 @@ function initjOWL(){
 
 		createOverviewWidget();
 }
+
+/*
+window.onload = function () {
+       alert('Welcome!');
+		var first = getUrlVars()["id"];
+		var second = getUrlVars()["page"];
+		 
+		alert(first);
+		alert(second);
+}*/
+
+
 </script>
 	</head>
 	<body>
