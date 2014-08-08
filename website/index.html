@@ -49,41 +49,50 @@ Glue.AI is an open source toolbox of software and specifications used to build s
 Running such characters requires a lot of software and data.  Rather than invent all the pieces ourselves, we bring together existing 
 open source software and data standards to make life easier for everyone.   We also divide GLUE.ai itself into a number of separate
 pieces, so that our users can each choose just the pieces they need for their own applications.  Each of the subprojects you 
-find in our materials also have their own websites:
-<a href="http://www.cogchar.org">Cogchar.org</a>, 
-<a href="http://www.mechio.org">MechIO.org</a>,
-<a href="http://www.appdapter.org">Appdapter.org</a>,
-<a href="http://www.storychat.org">StoryChat.org</a>,
-<a href="http://www.jflux.org">JFlux.org</a>,  
-<a href="http://www.rwshop.org">RWShop.org</a>, 
-<a href="http://www.friendularity.org">Friendularity.org</a>,
-<a href="http://www.headyspace.org">HeadySpace.org</a>,
-<a href="http://www.freckler.org">Freckler.org</a>.
+find in our materials also have their own websites.  
+
+<br/>Here they are listed in order of approximate importance and completeness
+so far in our overall effort, as of August 2014:
+
 <br/>
-The above list of subprojects is complete and sufficient for our plans through Glue.AI 2.0 (mid-2014).
+As of 2014-Aug, we get our most useful features by embedding the following layers directly into runtime characters.
+<ul>
+<li><a href="http://www.mechio.org">MechIO.org</a></li>
+<li><a href="http://www.appdapter.org">Appdapter.org</a></li>
+<li><a href="http://www.cogchar.org">Cogchar.org</a></li>
+<li><a href="http://www.jflux.org">JFlux.org</a></li>
+<li><a href="http://www.rwshop.org">RWShop.org</a></li>
+<li><a href="http://www.friendularity.org">Friendularity.org</a></li>
+</ul>
+<br/>
+While these others are still in a status of transition or prototype - check back soon:
+<a href="http://www.storychat.org">StoryChat.org</a>
+<a href="http://www.semplex.org">SemPlex.org</a>
+<a href="http://www.headyspace.org">HeadySpace.org</a>
+<a href="http://www.freckler.org">Freckler.org</a>
+<br/>
 </p>
 
-<p>What other open source projects are most comparable to Glue.AI?
+<p>What similar open source robot/character projects are most comparable to Glue.AI?
 <br/>
+We have no affiliation with these projects, however our software is to some extent
+compatible with all of them, and that compatibility is an explicit goal of our effort.
+We present them here as suggested items for comparison and potential custom combination
+in your own environment.
 <ul>
 <li><a href="http://smartbody.ict.usc.edu">SmartBody</a> - Native code <a href="http://www.mindmakers.org/projects/bml">BML</a> realizer for virtual humans
-</li><li><a href="http://wiki.icub.org/yarp/">YARP</a> - Native humanoid robotics platform used in the iCub robot
+</li><li><a href="http://wiki.icub.org/yarp/">YARP</a> - A tidy portable humanoid robotics platform used in the iCub robot.
 </li><li><a href="http://doc.utwente.nl/80698/1/Reidsma11elckerlyc.pdf">Elckerlyc</a> - Java BML realizer, uses <a href="http://perso.telecom-paristech.fr/~pelachau/Greta/">Greta</a> avatar.  <i>Discontinued or replaced?</i>
-</li><li><a href="http://www.ros.org/">ROS</a> - General robotics ecosystem, experimentally-oriented, using native code and a custom message infrastructure
+</li><li><a href="http://www.ros.org/">ROS</a> - General robotics (functional more than social) ecosystem, experimentally-oriented, using native code and a custom message infrastructure.   It is really a different kind of thing from Glue.AI.<br/>Glue.AI intends to be ROS compatible through rosjava and AMQP.<br/>Warning:  Full dynamic potential of Glue.AI VM talking to ROS services is unknown!
 </li>
 </ul>
 </p>
 
 <p>
 If you are creating content for an existing character application based on GLUE.ai, then you will be primarily interested in our 
-authorable content formats, such as:
+authorable content formats, based on the following adopted open formats:
 </p>
 <ul>
-	<li><a href="http://inform7.com">Inform 7</a> and related Interactive Fiction authoring systems, used only in our StoryChat.org layer and SemPlex authoring tools.
-		<ul><li>A relatively simple toolset for folks more interested in storytelling, games, and interaction than in traditional programming.</li>
-		<li>Applications that strive to show true "intelligence" may decide not to use this layer, or may use it in unconventional ways.</li>
-		</ul>
-	</li>
 	<li><a href="http://www.w3.org/RDF/">RDF</a> and related Semantic Web, Linked Data, and Description Logic standards.  RDF data may be edited using numerous forms, including
 		<ul><li><a href="http://protege.stanford.edu">Protege</a> knowledge editor.  (See also: TopBraid)</li>
 			<li>Spreadsheets- including online Google-Docs spreadsheets, as well as local OpenOffice / Excel sheets, and other CSV-compatible editors.</li>
@@ -97,6 +106,12 @@ authorable content formats, such as:
 	<li>Mathematical definitions of calculations, in a form similar to Matlab, Scilab, or Octave, 
 			usually parsed by <a href="https://code.google.com/p/symja">Symja</a>.
 	</li>
+	<li><a href="http://inform7.com">Inform 7</a> and related Interactive Fiction authoring systems, used in our StoryChat.org layer and SemPlex authoring tools.
+		<ul><li>A relatively simple toolset for folks more interested in storytelling, games, and interaction than in traditional programming.</li>
+		<li>Applications that strive to show true "intelligence" may decide not to use this layer, or may use it in unconventional ways.</li>
+		</ul>
+	</li>
+	
 </ul>
 <p>
 If you are building your own character software application, you may see GLUE.ai as either simply a library, or as a framework for your app.
