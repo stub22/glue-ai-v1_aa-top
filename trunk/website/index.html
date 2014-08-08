@@ -32,6 +32,7 @@ Glue.AI is an open source toolbox of software and specifications used to build s
 <br/>(Zeno and Alice images are Copyright <a href="http://robokindrobots.com">RoboKind Robots</a>, used by permission)
 </p>
 
+<h4>Key Feature Sets</h4>
 <p>Fun and useful things our characters like to do:
 <ul>
 <li>Move - expressively, purposefully, naturally</li>
@@ -45,25 +46,30 @@ Glue.AI is an open source toolbox of software and specifications used to build s
 </ul>
 </p>
 
+<h4>Our Platform Design</h4>
 <p>
 Running such characters requires a lot of software and data.  Rather than invent all the pieces ourselves, we bring together existing 
 open source software and data standards to make life easier for everyone.   We also divide GLUE.ai itself into a number of separate
 pieces, so that our users can each choose just the pieces they need for their own applications.  Each of the subprojects you 
 find in our materials also have their own websites.  
 
-<br/>Here they are listed in order of approximate importance and completeness
-so far in our overall effort, as of August 2014:
 
 <div>
-As of 2014-Aug, we get our most useful features by embedding the following layers directly into runtime characters.
-<br/>As with many open source efforts, each of these websites lags behind our actual code progress (which you can
-see in our public subversion trees, and in sonatype binary repositories), but with your help, they eventually catch up.
+We deploy our most useful features by embedding configured instances of the following layers directly into a single embedded or desktop 
+Java VM, to yield a set of characters (usually one is primary) and applications.  These characters and apps combine natural-UI 
+interaction (speech and hearing, visual communication, touch sensing and gestures) with physical and virtual characters, as well 
+as web / mobile application features.
+<br/>As with many open source efforts, each of these websites lags behind our current working feature status (which you can
+review in our public subversion trees, and in sonatype binary repositories, and our moribund discussion groups), but with 
+your help, they eventually catch up.
+<br/>Here are the layers listed in order of approximate importance and completeness (most important and complete are listed first), 
+as of August 2014:
 <ul>
-<li><a href="http://www.mechio.org">MechIO.org</a> - robot device capabilities abstraction layer, speaks AMQP ; impl in java + portable native code.
-</li><li><a href="http://www.appdapter.org">Appdapter.org</a> - data management using RDF graphs and symbolic math expressions ; impl in scala + java.
-</li><li><a href="http://www.cogchar.org">Cogchar.org</a> - character behavioral state and data routing framework, speaks HTTP and AMQP ; impl in scala + java.
+<li><a href="http://www.mechio.org">MechIO.org</a> - Robot device capabilities abstraction layer, speaks AMQP ; impl in java + portable native code.
+</li><li><a href="http://www.appdapter.org">Appdapter.org</a> - Data management using RDF graphs and symbolic math expressions ; impl in scala + java.
+</li><li><a href="http://www.cogchar.org">Cogchar.org</a> - Character behavioral state and data routing framework, speaks HTTP and AMQP ; impl in scala + java.
 <br/><small>(Historically, Cogchar has also contained 3D avatar features, which are now moving to HeadySpace.org)</small>.
-</li><li><a href="http://www.jflux.org">JFlux.org</a> - service binding and discovery using OSGi ; impl in java.
+</li><li><a href="http://www.jflux.org">JFlux.org</a> - Service binding and discovery using OSGi ; impl in java.
 </li><li><a href="http://www.friendularity.org">Friendularity.org</a> - Experimental plugins and utilities, and demo/test launch harnesses ; impl in java.
 </li><li><a href="http://www.rwshop.org">RWShop.org</a> - Workshop IDE for student developers, based on Netbeans platform ; impl in java.
 </li>
@@ -104,10 +110,12 @@ with Glue.AI in your own environment.
 </ul>
 </div>
 
-<p>
+<div>
+<h4>Data Formats for Authors</h4>
+<span>
 If you are creating content for a Glue.AI character application supplied to you, then you may be primarily interested in our 
 authorable content schemas, which are based on the following adopted open formats:
-</p>
+</span>
 <ul>
 	<li><a href="http://www.w3.org/RDF/">RDF</a> and related Semantic Web, Linked Data, and Description Logic standards.  RDF data may be edited using numerous forms, including
 		<ul><li><a href="http://protege.stanford.edu">Protege</a> knowledge editor.  (See also: TopBraid)</li>
@@ -129,12 +137,14 @@ authorable content schemas, which are based on the following adopted open format
 		<li>Applications that strive to show true "intelligence" may decide not to use this layer, or may use it in unconventional ways.</li>
 		</ul>
 	</li>
-	
 </ul>
-<p>
+</div>
+<div>
+<h4>Integrating Your Code</h4>
+<span>
 If you are building your own character software application, you may see GLUE.ai as either simply a library, or as a framework for your app.
 <br/>When GLUE.ai is used as a framework, then your application is a set of plugins operating at differing levels of information granularity:
-</p>
+</span>
 <ul>
 <li>A <b>symbol</b> plugin can process high level information available about the character's mental state and estimated surroundings.  
 At this level we shape the intentions of the character.  Usually this kind of plugin will only take action a few times each second, to fulfill its high level decisions,  although it may be thinking continuously.  It relies on input symbols published by lower level signal plugins, and produces output symbols for consumption by other components that translate the symbolic intent into physical/virtual motion, sound, and other character action.</li>
@@ -142,10 +152,14 @@ At this level we shape the intentions of the character.  Usually this kind of pl
 <li>Plugins may connect to GLUE.ai components over network protocols (HTTP, AMQP), or be injected directly into our processes via OSGi or equivalents.</li>
 <li>Configuration and state data may be shared through repository whiteboards (RDF, SQL, HDF5), and/or explicit messages (Avro, JSON).</li>
 </ul>
+</div>
 
+<div>
 <p>To get you started, GLUE.ai contains a large number of existing feature components, demonstration programs, and test harnesses.
-<br/>All binaries and source code are provided through our subproject websites and repositories.</p>
-<p>Please learn more by browsing our online docs:</p>
+<br/>All binaries and source code are provided through our subproject websites and repositories.
+</p>
+<p>Please learn more by browsing our online docs:
+</p>
 
 <ul>
 <li><a href="https://www.assembla.com/spaces/glue_ai/wiki">GLUE.ai wiki</a>
@@ -165,8 +179,10 @@ At this level we shape the intentions of the character.  Usually this kind of pl
 	</ul>
 </li>
 
-<li><a href="http://www.hrkind.com">HRKind.com website</a> - Tech docs from RoboKind Robots commercial products, many of which use commercialized forms of Glue.AI software</li>
+<li><a href="http://www.rkbots.com">RKBots.com website</a> - Tech docs from <a href="http://www.robokindrobots.com">RoboKind Robots</a> commercial products, many of which use commercialized forms of Glue.AI software</li>
 </ul>
+</div>
+
 <hr>
 Copyright 2013-2014 by the Glue.AI project.  
 <br/>Attributed quotation of this page is permitted, provided the name "Glue.AI" is prominently mentioned.
