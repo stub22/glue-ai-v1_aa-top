@@ -54,31 +54,47 @@ find in our materials also have their own websites.
 <br/>Here they are listed in order of approximate importance and completeness
 so far in our overall effort, as of August 2014:
 
-<br/>
+<div>
 As of 2014-Aug, we get our most useful features by embedding the following layers directly into runtime characters.
+<br/>As with many open source efforts, each of these websites lags behind our actual code progress (which you can
+see in our public subversion trees, and in sonatype binary repositories), but with your help, they eventually catch up.
 <ul>
-<li><a href="http://www.mechio.org">MechIO.org</a></li>
-<li><a href="http://www.appdapter.org">Appdapter.org</a></li>
-<li><a href="http://www.cogchar.org">Cogchar.org</a></li>
-<li><a href="http://www.jflux.org">JFlux.org</a></li>
-<li><a href="http://www.rwshop.org">RWShop.org</a></li>
-<li><a href="http://www.friendularity.org">Friendularity.org</a></li>
+<li><a href="http://www.mechio.org">MechIO.org</a> - robot device capabilities abstraction layer, speaks AMQP ; impl in java + portable native code.
+</li><li><a href="http://www.appdapter.org">Appdapter.org</a> - data management using RDF graphs and symbolic math expressions ; impl in scala + java.
+</li><li><a href="http://www.cogchar.org">Cogchar.org</a> - character behavioral state and data routing framework, speaks HTTP and AMQP ; impl in scala + java.
+<br/><small>(Historically, Cogchar has also contained 3D avatar features, which are now moving to HeadySpace.org)</small>.
+</li><li><a href="http://www.jflux.org">JFlux.org</a> - service binding and discovery using OSGi ; impl in java.
+</li><li><a href="http://www.friendularity.org">Friendularity.org</a> - Experimental plugins and utilities, and demo/test launch harnesses ; in java.
+</li><li><a href="http://www.rwshop.org">RWShop.org</a> - Workshop IDE for student developers, based on Netbeans platform ; impl in java.
+</li>
 </ul>
-<br/>
-While these others are still in a status of transition or prototype - check back soon:
-<a href="http://www.storychat.org">StoryChat.org</a>
-<a href="http://www.semplex.org">SemPlex.org</a>
-<a href="http://www.headyspace.org">HeadySpace.org</a>
-<a href="http://www.freckler.org">Freckler.org</a>
-<br/>
-</p>
+</div>
+<div>
+Meanwhile, these other layers are still in a status of transition or prototype.  
+<br/>But they can already be useful, as examples of how to start your own Glue-AI compatible project.
+<ul>
+</li><li><a href="http://www.headyspace.org">HeadySpace.org</a> - renaming target for our 3D virtual-world code, inbound from Cogchar.
+</li><li><a href="http://www.freckler.org">Freckler.org</a> - renaming target for our vision and perception code, inbound from Friendularity.
+<li><a href="http://www.storychat.org">StoryChat.org</a> - Authorable Story+Game+Chat state-machine AI, 
+incorporating <a href="http://ifdb.tads.org/">Interactive Fiction</a>,
+and <a href="http://alicebot.blogspot.com/2013/01/aiml-20-draft-specification-released.html">AIML 2.0</a>-compatible chat expressions.
+</li><li>SemPlex .org +.net - (website pending) - Cognitive-AI tools used on desktops and servers.
+</li>
+</ul>
+</div>
 
-<p>What similar open source robot/character projects are most comparable to Glue.AI?
-<br/>
+<div>
+Integration with Glue.AI is done using HTTP, AMQP, RDF, SPARQL and other open, standardized protocols and formats.
+</div>
+
+<div>
+<h4>What similar open source robot/character projects are most comparable to Glue.AI?</h4>
+<span>
 We have no affiliation with these projects, however our software is to some extent
 compatible with all of them, and that compatibility is an explicit goal of our effort.
-We present them here as suggested items for comparison and potential custom combination
-in your own environment.
+<br/>We present them here as suggested frameworks for comparison and potential custom combination
+with Glue.AI in your own environment.
+</span>
 <ul>
 <li><a href="http://smartbody.ict.usc.edu">SmartBody</a> - Native code <a href="http://www.mindmakers.org/projects/bml">BML</a> realizer for virtual humans
 </li><li><a href="http://wiki.icub.org/yarp/">YARP</a> - A tidy portable humanoid robotics platform used in the iCub robot.
@@ -86,11 +102,11 @@ in your own environment.
 </li><li><a href="http://www.ros.org/">ROS</a> - General robotics (functional more than social) ecosystem, experimentally-oriented, using native code and a custom message infrastructure.   It is really a different kind of thing from Glue.AI.<br/>Glue.AI intends to be ROS compatible through rosjava and AMQP.<br/>Warning:  Full dynamic potential of Glue.AI VM talking to ROS services is unknown!
 </li>
 </ul>
-</p>
+</div>
 
 <p>
-If you are creating content for an existing character application based on GLUE.ai, then you will be primarily interested in our 
-authorable content formats, based on the following adopted open formats:
+If you are creating content for a Glue.AI character application supplied to you, then you may be primarily interested in our 
+authorable content schemas, which are based on the following adopted open formats:
 </p>
 <ul>
 	<li><a href="http://www.w3.org/RDF/">RDF</a> and related Semantic Web, Linked Data, and Description Logic standards.  RDF data may be edited using numerous forms, including
@@ -102,9 +118,11 @@ authorable content formats, based on the following adopted open formats:
 	<li>MIDI, WAV, MP3 and many related musical + audio data standards (used for both sensing input and performance output).</li>
 	<li>Camera data and vision processing formats.</li>
 	<li>Animation and body description formats, including mappings to robot servos and onscreen displays.</li>
-	<li>Other sensor and effector data, including input IMU and location sensing, and output lighting.</li>
-	<li>Mathematical definitions of calculations, in a form similar to Matlab, Scilab, or Octave, 
-			usually parsed by <a href="https://code.google.com/p/symja">Symja</a>.
+	<li>Gestural descriptions in SAIBA BML format (intended compatible with SmartBody and ROS BML realizer)</li>
+	<li>Other sensor and effector data, including input IMU and location sensing, and output light features, e.g. LEDs.</li>
+	<li>Mathematical definitions of calculations, in a form similar to Matlab, Scilab, or Octave, and compatible with the form 
+		parsed by <a href="https://code.google.com/p/symja">Symja</a>, which is included in Appdapter under LGPL license as a 
+		demonstration of a working math engine.
 	</li>
 	<li><a href="http://inform7.com">Inform 7</a> and related Interactive Fiction authoring systems, used in our StoryChat.org layer and SemPlex authoring tools.
 		<ul><li>A relatively simple toolset for folks more interested in storytelling, games, and interaction than in traditional programming.</li>
@@ -150,7 +168,7 @@ At this level we shape the intentions of the character.  Usually this kind of pl
 <li><a href="http://www.hrkind.com">HRKind.com website</a> - Tech docs from RoboKind Robots commercial products, many of which use commercialized forms of Glue.AI software</li>
 </ul>
 <hr>
-Copyright 2013 by the Glue.AI project.  
+Copyright 2013-2014 by the Glue.AI project.  
 <br/>Attributed quotation of this page is permitted, provided the name "Glue.AI" is prominently mentioned.
 <br/>All Glue.AI projects use the Apache 2.0 License, but some included components may use LGPL and other licenses.  Please review all "license" and "README" files in any components you download!
 </BODY>
