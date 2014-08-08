@@ -33,7 +33,7 @@ Glue.AI is an open source toolbox of software and specifications used to build s
 <br/>(Zeno and Alice images are Copyright <a href="http://robokindrobots.com">RoboKind Robots</a>, used by permission)
 </p>
 
-<h4>Key Feature Sets</h4>
+<h3>Key Feature Sets</h3>
 <p>Fun and useful things our characters like to do:
 <ul>
 <li>Move - expressively, purposefully, naturally</li>
@@ -47,7 +47,7 @@ Glue.AI is an open source toolbox of software and specifications used to build s
 </ul>
 </p>
 <div>
-<h4>Platform Design</h4>
+<h3>Platform Design</h3>
 <p>
 Running such characters requires a lot of software and data.  Rather than invent all the pieces ourselves, we bring together existing 
 open source software and data standards to make life easier for everyone.   We also divide Glue.AI itself into a number of separate
@@ -57,6 +57,7 @@ find in our materials also have their own websites, wikis, subversion source cod
 </div>
 
 <div>
+<h4>Primary Layers</h4>
 <p>
 We deploy our most useful features by embedding configured instances of the following layers directly into a single embedded or desktop 
 Java VM, to yield a set of characters (usually one is primary) and applications.  These characters and apps combine natural-UI 
@@ -81,6 +82,27 @@ Here are the layers listed in order of approximate importance and completeness (
 </ul>
 </div>
 <div>
+The diagrams below provide a quick visual introduction to "how it works".  
+<table border="1">
+<tr><td width="400">
+Here is a one-page process and threading oriented view of a running Glue.AI character system.
+<br/>  
+<a href="http://www.cogchar.org/diag/Cogchar_Threads_2013_04.pdf"><img src="http://www.cogchar.org/diag/Cogchar_Threads_2013_03.png" height="204" />
+<br/><i>(Click diagram to see enlarged, annotated PDF view)</i></a>
+</td>
+<td width="400">
+Here is a somewhat dated but mostly accurate system context diagram, accounting for physical 
+and virtual characters in a variety of deployment kinds.
+Note that the word "Robokind" used here is inaccurate, and must be replaced by "MechIO".
+<br/>
+<a href="http://www.cogchar.org/diag/ccrk_component_galaxy.png"><img src="http://www.cogchar.org/diag/ccrk_component_galaxy.png" height="204"/>
+<br/><i>(Click diagram to enlarge)</i>
+</a>
+</td></tr></table>
+</div>
+
+<div>
+<h4>Supplementary Layers</h4>
 Meanwhile, these other layers are still in a status of transition or prototype.  
 <br/>But they can already be useful, as examples of how to start your own Glue-AI compatible project.
 <ul>
@@ -96,10 +118,10 @@ and <a href="http://alicebot.blogspot.com/2013/01/aiml-20-draft-specification-re
 <div>
 <h4>Combined View of All Materials</h4>
 <p>
-All materials are hosted in a regular pattern at Assembla.com, in projects of the "glue" portfolio, which looks better when your 
+All our materials are hosted in a regular pattern at Assembla.com, in projects of the "glue" portfolio, which looks better when your 
 browser is logged in to Assembla:
 <ul>
-<li>Please review the <a href="https://glue.assembla.com/p/projects">glue portfolio</a>  on Assembla.com.
+<li><a href="https://glue.assembla.com/p/projects">Glue Portfolio</a> hosted on Assembla.com.
 </li></ul>
 This orderly layering of downloadable, releasable, updatable Java bundles is a primary benefit of our architecture and infrastructure.
 </p>
