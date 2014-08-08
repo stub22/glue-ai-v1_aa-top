@@ -45,16 +45,23 @@ Glue.AI is an open source toolbox of software and specifications used to build s
 <li>Behave, Intend, Consider, Emote, and Remember</li>
 </ul>
 </p>
-
-<h4>Our Platform Design</h4>
+<div>
+<h4>Platform Design</h4>
 <p>
 Running such characters requires a lot of software and data.  Rather than invent all the pieces ourselves, we bring together existing 
 open source software and data standards to make life easier for everyone.   We also divide GLUE.ai itself into a number of separate
-pieces, so that our users can each choose just the pieces they need for their own applications.  Each of the subprojects you 
-find in our materials also have their own websites.  
-
-
+pieces, so that our users can each choose just the pieces they need for their own applications.  Each of the subproject-layerss you 
+find in our materials also have their own websites, wikis, subversion source code trees, and binary releases in sonatype repositories.
+</p>
+All materials are hosted in a regular pattern at Assembla.com, in projects of the "glue" portfolio, which looks better when your 
+browser is logged in to Assembla:
+<ul>
+<li>Please review the <a href="https://glue.assembla.com/p/projects">glue portfolio</a>  on Assembla.com.
+</li></ul>
+This orderly layering of downloadable, releasable updatable Java VM bundles is a primary benefit of our architecture and infrastructure.
+</div>
 <div>
+<p>
 We deploy our most useful features by embedding configured instances of the following layers directly into a single embedded or desktop 
 Java VM, to yield a set of characters (usually one is primary) and applications.  These characters and apps combine natural-UI 
 interaction (speech and hearing, visual communication, touch sensing and gestures) with physical and virtual characters, as well 
@@ -62,7 +69,8 @@ as web / mobile application features.
 <br/>As with many open source efforts, each of these websites lags behind our current working feature status (which you can
 review in our public subversion trees, and in sonatype binary repositories, and our moribund discussion groups), but with 
 your help, they eventually catch up.
-<br/>Here are the layers listed in order of approximate importance and completeness (most important and complete are listed first), 
+</p>
+Here are the layers listed in order of approximate importance and completeness (most important and complete are listed first), 
 as of August 2014:
 <ul>
 <li><a href="http://www.mechio.org">MechIO.org</a> - Robot device capabilities abstraction layer, speaks AMQP ; impl in java + portable native code.
@@ -81,7 +89,7 @@ Meanwhile, these other layers are still in a status of transition or prototype.
 <ul>
 </li><li><a href="http://www.headyspace.org">HeadySpace.org</a> - renaming target for our 3D virtual-world code, inbound from Cogchar.
 </li><li><a href="http://www.freckler.org">Freckler.org</a> - renaming target for our vision and perception code, inbound from Friendularity.
-<li><a href="http://www.storychat.org">StoryChat.org</a> - Authorable Story+Game+Chat state-machine AI, 
+<li><a href="http://www.storychat.org">StoryChat.org</a> - Authorable state-machine AI plays integrated stories, games, and chatty behaviors,
 incorporating <a href="http://ifdb.tads.org/">Interactive Fiction</a>,
 and <a href="http://alicebot.blogspot.com/2013/01/aiml-20-draft-specification-released.html">AIML 2.0</a>-compatible chat expressions.
 </li><li>SemPlex .org +.net - (website pending) - Cognitive-AI tools used on desktops and servers.
@@ -90,7 +98,15 @@ and <a href="http://alicebot.blogspot.com/2013/01/aiml-20-draft-specification-re
 </div>
 
 <div>
-Integration with Glue.AI is done using HTTP, AMQP, RDF, SPARQL and other open, standardized protocols and formats.
+<h4>Integration Data Forms, Message Channels, and APIs</h4>
+<ul>
+<li>External integration with Glue.AI is done using HTTP, AMQP, RDF, SPARQL and other open, standardized protocols and formats.
+</li><li>Since Glue.AI is based on open source Java and OSGi, you can make a custom JVM deployment using a selection of your 
+bundles combined with Glue.AI bundles and others.  
+		<ul>
+		<li>This kind of integration has never been cleaner or more productive than what Java, OSGi and Maven allow for today.</li>
+		</ul>
+</li>
 </div>
 
 <div>
