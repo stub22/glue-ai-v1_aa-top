@@ -22,7 +22,7 @@
 <hr/>
 
 <p>
-Glue.AI is an open source toolbox of software and specifications used to build social robotics systems.
+Glue.AI is an open source toolbox of software and specifications used to build social robotics systems, and <a href="glue_kernel.html">other systems</a>.
 <br/>You can use it to make engaging robot characters, running inside both actual robot hardware, and computer simulations.
 <br/>Each character may use a broad combination of physical, verbal, and musical features, which can evolve over time in complex, 
 <br/><b>fun</b>, and exciting ways!
@@ -49,6 +49,26 @@ Glue.AI is an open source toolbox of software and specifications used to build s
 <div>
 <h3>Platform Design</h3>
 <p>
+Core strategic open platforms<br/>
+More than anything else, the glue.ai software is a combination of existing open source components to provide useful results.
+As of 2016, the core components are:
+<ul>
+<li>Type schema and config:  RDF</li>
+<li>Functional async computing:  Scala, akka.io, spray.io</li>
+<li>Network interop: AMQP and HTTP</li>
+</ul>
+</p>
+
+<p>
+The kernel of our glue.ai software is now (2016) also being used for a variety of
+applications outside of character performance, including large dataset
+analysis and visualization.   <br/>
+For more info see <a href="glue_kernel.html">Glue.ai Kernel</a>.
+</p>
+
+
+<p>
+Back to explaining the original purpose and structure:
 Running such characters requires a lot of software and data.  Rather than invent all the pieces ourselves, we bring together existing 
 open source software and data standards to make life easier for everyone.   We also divide Glue.AI itself into a number of separate
 pieces, so that our users can each choose just the pieces they need for their own applications.  Each of the subproject-layers you 
@@ -174,11 +194,12 @@ authorable content schemas, which are based on the following adopted open format
 	<li>MIDI, WAV, MP3 and many related musical + audio data standards (used for both sensing input and performance output).</li>
 	<li>Camera data and vision processing formats.</li>
 	<li>Animation and body description formats, including mappings to robot servos and onscreen displays.</li>
-	<li>Gestural descriptions in SAIBA BML format (intended compatible with SmartBody and ROS BML realizer)</li>
+    <li>Gestural descriptions in SAIBA BML format (intended compatible with SmartBody and ROS BML realizer)</li>
 	<li>Other sensor and effector data, including input IMU and location sensing, and output light features, e.g. LEDs.</li>
 	<li>Mathematical definitions of calculations, in a form similar to Matlab, Scilab, or Octave, and compatible with the form 
-		parsed by <a href="https://code.google.com/p/symja">Symja</a> (licensed under LGPL), which is included with Appdapter as a 
+		parsed by <a href="https://code.google.com/p/symja">Symja</a>, which is included with Appdapter as a 
 		demonstration java math engine.
+ Note that some parts of Symja are published under the LGPL license, while others are under an Apache license.
 	</li>
 	<li><a href="http://inform7.com">Inform 7</a> and related Interactive Fiction authoring systems, used in our StoryChat.org layer and SemPlex authoring tools.
 		<ul><li>A relatively simple toolset for folks more interested in storytelling, games, and interaction than in traditional programming.</li>
