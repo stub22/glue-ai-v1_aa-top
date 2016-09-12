@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<TITLE>Glue.AI - open source social robotics</TITLE>
+<link href="styles.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2847642-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</HEAD>
+<BODY>
+<h2>Glue-ML definition language for Glue.AI</h2>
+<hr/>
+<p>
+The "Glue-ML language" is a set of schemas for describing systems and connections.
+<br/>
+In particular it is used to describe:
+<br/><br/>
+I)   Assembly and configuration of data pipeline structures
+<br/>
+II)  Communicating state machines, with transition guards and transition actions
+<br/>
+</p>
+<p>
+As of 2016, the principal schemas of the Glue-ML language are defined 
+using the following OWL (-Lite/RDFS) ontologies:
+</p>
+<ul>
+	<li><a href="http://subversion.assembla.com/svn/cogchar/trunk/src_resources_core/org/cogchar/onto/MetaDir_owl2.n3">MetaDir</a> - Graph descriptions, collections and metadata</li>
+
+	<li><a href="http://subversion.assembla.com/svn/cogchar/trunk/src_resources_core/org/cogchar/onto/CircusRecipe_owl2.n3">CircusRecipe</a> - Pipelines of computation</li>
+	
+	<li><a href="http://subversion.assembla.com/svn/cogchar/trunk/src_resources_core/org/cogchar/onto/AppProfile_owl2.n3">AppProfile</a> - Switchable, mergeable configuration and loading descriptions</li>
+</ul>
+<p>
+These schemas are concerned primarily with category I features, i.e. defining pipelines.
+Meanshile category II (state machine) structures are more purpose specific, and thus
+are built as activity sites within such pipelines.
+</p><p>	
+Other ontologies are also used to specify schemas for UI features and particular
+application scenarios, which is where explicit state machines come more into play.
+</p><p>
+We call Glue-ML a (pseudo-) "language" because it defines a programming model associated
+to a vocabulary.  If Glue-ML were to be written out as "code", the syntax of Glue-ML would 
+be any syntax compatible with RDF.   But more commonly, one works with a set of graphs 
+(in files or databases) which together specify the required computation and application 
+features for your application.  These graphs may be edited with a wide variety of tools.
+</p>
+</BODY>
+</HTML>	
