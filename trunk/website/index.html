@@ -1,6 +1,6 @@
-<HTML>
-<HEAD>
-<TITLE>Glue.AI - open source social robotics</TITLE>
+<html>
+<head>
+<title>Glue.AI - open source social robotics</title>
 <link href="styles.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript">
 
@@ -15,8 +15,8 @@
   })();
 
 </script>
-</HEAD>
-<BODY>
+</head>
+<body>
 <h2>Welcome to Glue.AI</h2>
 <p><i>Open source software for social robots</i></p>
 <hr/>
@@ -33,8 +33,9 @@ Glue.AI is an open source toolbox of software and specifications used to build s
 <br/>(Robot images are Copyright <a href="http://robokind.com">RoboKind Robots</a>, used by glue.ai with permission)
 </p>
 
+<div>
 <h3>Key Feature Sets</h3>
-<p>Fun and useful things our characters like to do:
+Fun and useful things our characters like to do:
 <ul>
 <li>Move - expressively, purposefully, naturally</li>
 <li>See - people, objects, motion, expressions, gestures</li>
@@ -45,7 +46,7 @@ Glue.AI is an open source toolbox of software and specifications used to build s
 <li>Teach, Learn, and Play</li>
 <li>Behave, Intend, Consider, Emote, and Remember</li>
 </ul>
-</p>
+</div>
 <div>
 <h3>Looking Forward to Glue v2.x</h3>
 <p>
@@ -55,11 +56,10 @@ See our <a href="https://github.com/stub22/glue-ai-ng">glue-ai-ng</a> repository
 <h3>Platform Design of Glue v1.x</h3>
 <p>
 This website and linked materials describe the 1.x versions of the Glue.ai software.<br/>
-Development of this software has concluded, although there may still be small bugfixes.<br/>
-     
+Development of this software has concluded, although there may still be small bugfixes.
 </p>
-<p>
-Core strategic open platforms<br/>
+<div>    
+Strategic Ingredients<br/>
 The glue.ai software is a layered combination of open source components intended to provide broadly useful results.
 <br/>One lynchpin is the <a href="glue_ml.html">Glue-ML</a> set of application schemas, defined using OWL ontologies.
 <br/>Glue.AI applications are defined and launched using data regulated by those schemas, mapped into activities of
@@ -70,16 +70,13 @@ As of 2016, the core implementing component technologies are:
 <li>Functional async computing:  Scala, akka.io, spray.io</li>
 <li>Network interop: AMQP and HTTP</li>
 </ul>
-</p>
-
 <p>
 The kernel of our glue.ai software is now (2016) also being used for a variety of
 applications outside of character performance, including large dataset
 analysis and visualization.   <br/>
 For more info see <a href="glue_kernel.html">Glue.ai Kernel</a>.
 </p>
-
-
+</div>    
 <p>
 Back to explaining the original purpose and structure:
 Running such characters requires a lot of software and data.  Rather than invent all the pieces ourselves, we bring together existing 
@@ -88,7 +85,7 @@ pieces, so that our users can each choose just the pieces they need for their ow
 find in our materials also have their own websites, wikis, subversion source code trees, and binary releases in sonatype repositories.
 </p>
 </div>
-
+    
 <div>
 <h4>Primary Layers</h4>
 <p>
@@ -96,7 +93,8 @@ We deploy our most useful features by embedding configured instances of the foll
 Java VM, to yield a set of characters (usually one is primary) and applications.  These characters and apps combine natural-UI 
 interaction (speech and hearing, visual communication, touch sensing and gestures) with physical and virtual characters, as well 
 as web / mobile application features.
-</p></p>
+</p>
+<p>
 As with many open source efforts, each of these websites lags behind our current working feature status (which you can
 review in our public subversion trees, and in sonatype binary repositories, and our moribund discussion groups), but with 
 your help, they eventually catch up.
@@ -140,7 +138,7 @@ Process dataflow and threading view of a typical Glue.AI character deployment.
 These layers are still in an initial development status.  
 <br/>But they can already be useful, as examples of how to start your own Glue-AI compatible project.
 <ul>
-</li><li><a href="http://www.headyspace.org">HeadySpace.org</a> - renaming target for our 3D virtual-world code, inbound from Cogchar.
+<li><a href="http://www.headyspace.org">HeadySpace.org</a> - renaming target for our 3D virtual-world code, inbound from Cogchar.
 </li><li><a href="http://www.freckler.org">Freckler.org</a> - renaming target for our vision and perception code, inbound from Friendularity.
 <li><a href="http://www.storychat.org">StoryChat.org</a> - Authorable state-machine AI plays integrated stories, games, and chatty behaviors,
 incorporating <a href="http://ifdb.tads.org/">Interactive Fiction</a>,
@@ -151,14 +149,12 @@ and <a href="http://alicebot.blogspot.com/2013/01/aiml-20-draft-specification-re
 </div>
 <div>
 <h4>Combined View of All Materials</h4>
-<p>
-All our materials are hosted in a regular pattern at Assembla.com, in projects of the "glue" portfolio, which looks better when your 
-browser is logged in to Assembla:
+
+All our materials are hosted in a regular pattern at Assembla.com, in projects of the "glue" portfolio, which looks better when your browser is logged in to Assembla:
 <ul>
 <li><a href="https://glue.assembla.com/p/projects">Glue Portfolio</a> hosted on Assembla.com.
 </li></ul>
 This orderly layering of downloadable, releasable, updatable Java bundles is a primary benefit of our architecture and infrastructure.
-</p>
 </div>
 
 <div>
@@ -171,6 +167,7 @@ bundles combined with Glue.AI bundles and others.
 		<li>This kind of integration has never been cleaner or more productive than what Java, OSGi and Maven allow for today.</li>
 		</ul>
 </li>
+</ul>    
 </div>
 
 <div>
@@ -261,12 +258,13 @@ At this level we shape the intentions of the character.  Usually this kind of pl
 <li><a href="https://drive.google.com/folderview?id=0B7BjkBoH40tnYzc4YzY4MmUtYmRhNi00OTE4LWI4ODctNjUzMzcxMjU4ZjZl">Open Src Glue</a> - Full Google Drive doc folder for all subprojects (but some subprojects keep more docs in their wikis, SVN, or under the "Volume 1 - GLUE.ai Intro" folder linked above, so please don't be discouraged if some subfolders here appear thin or rough.)
 	</ul>
 </li>
-
+</ul>
 </div>
-
-<hr>
+<div>
+<hr/>
 Copyright 2013-2018 by the Glue.AI project.  
 <br/>Attributed quotation of this page is permitted, provided the name "Glue.AI" is prominently mentioned.
 <br/>All Glue.AI projects use the Apache 2.0 License, but some included components may use LGPL and other licenses.  Please review all "license" and "README" files in any components you download!
-</BODY>
-</HTML>
+</div>
+</body>
+</html>
